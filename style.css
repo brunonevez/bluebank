@@ -1,0 +1,245 @@
+	*{
+			margin: 0;
+			padding: 0;
+		}
+		/*espaçamento de uma section para outra*/
+		section{
+		 	padding: 60px 0;			
+		}	
+		
+		main{
+			height: 80%;
+			background-color: #1572A1;
+		}
+		/*custom do TOP(header)*/
+		header{
+			background-color: #1572A1;
+			border-bottom: #fff 2px solid;
+		}
+		.navbar-nav{
+			color: white;
+		}
+		.nav-link {
+			color: white;
+		}
+		a:hover{
+		color: #a2a2a2;
+		}
+
+		/*parte da frente do cartão*/
+		.face{
+			color: white;
+			width: 500px;
+			margin: 50px auto;
+			perspective: 600px;
+			transform: rotateY(0);
+		}
+		.card-front{
+			background: black;
+			border-radius: 20px;
+			width: 350px;
+			height: 200px;
+			flex-direction: column;
+			position: absolute;
+			z-index: 1;	
+		}
+
+		.colfront-1, .colfront-2, .colfront-3{
+			width: 100%;
+			height: 25%;
+		}
+		.colfront-1{
+			display: flex;
+			justify-content: end;
+		}
+		.colfront-3{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.nome-card{
+			color: white;
+			font-size: 20px;
+			padding-right: 10px;
+		}
+		.chip{
+			width: 50px;
+			height: 35px;
+			margin-left: 30px;
+			margin-top: -20px;
+			background: yellow;	
+			border-radius: 10px;
+			float: left;
+			
+		}
+		.numeracao{
+			padding: 10px;
+			margin-left: 20px;
+			clear: both;
+		}
+		.validade{
+			margin-left: 30px;
+		}
+
+		.bandeira{
+			width: 55px;
+			height: 40px;
+			padding-top: 20px;	
+
+		}
+		.circulo-1{
+			width: 40px;
+			height: 40px;
+			border-radius: 20px;
+			background-color: orange;
+			float: left;
+			position: absolute;
+		}
+		.circulo-2{
+			width: 40px;
+			height: 40px;
+			border-radius: 20px;
+			background: red;
+			float: left;
+			margin-left: 25px;
+			position: absolute;
+		}
+		.nome{
+			display: flex;
+			flex-direction: row;
+			padding: 70px;
+			margin-top: 30px;
+		}
+
+		/*parte de tras do cartão*/
+		.card-back{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: black;
+			border-radius: 20px;
+			width: 350px;
+			height: 200px;
+			flex-direction: column;
+			position: absolute;
+			
+		}
+		.colback-1{
+			width: 100%;
+			height: 50%;
+		} 
+		.colback-2, .colback-3{
+			width: 100%;
+			height: 50%;
+		}
+		.tarja{
+			width: 100%;
+			height: 40px;
+			background: #ccc;
+			margin-top: 20px;
+		}
+		.celo{
+			width: 65px;
+			height: 45px;
+			margin: 20px;
+			border-radius: 10px;
+			background: #ccc;
+		}
+		.cod-seguraca{
+			padding-left: 45%;
+		}
+
+		/*Animção*/
+		.card-front{	
+			animation: front 2.5s infinite;
+		}
+		.card-front{
+			animation: front 2.5s infinite;
+			transform: translateZ(10px);
+			backface-visibility: hidden;
+		}
+		.card-back{	
+			animation: back 2.5s infinite;
+		}
+		.card-back{
+			animation: back 2.5s infinite;
+			transform: translateZ(10px);
+		}
+		
+		
+		@keyframes front{
+			from {
+				transform: rotateY(0deg);
+			}
+			to {
+				transform: rotateY(180deg);
+				z-index: 0;
+			}
+		}
+		@keyframes back{
+			from {
+				transform: rotateY(-180deg);
+			}
+			to {
+				transform: rotateY(0deg);
+				z-index: 1;
+			}
+		}
+
+		.card{
+			height: 100%;
+			border: none;
+			box-shadow: 2px 2px 10px 0.2px;
+		}
+		/*efeito do cartão de amplicar quando passar o mouse*/
+		.card:hover{
+			transform:scale(1.10,1.10);
+		}
+		
+		.image-responsive{
+			display: block;
+			margin:0 auto
+		}
+			/*cartões inferiores*/
+			.cartoes{
+				height: 600px;
+				background: #000;
+				background: linear-gradient(
+					rgba(0,0,0,0.3),
+					rgba(0,0,0,0.3)
+					),
+				url(parallax.jpg);
+				background-attachment: fixed;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			/*rodapé*/
+			.footer{
+				background: #1572A1;
+				color: #fff;
+			}		
+			/*medias*/
+		@media(max-width: 767px){
+			.card:hover{
+				transform:scale(1.00,1.00);
+			}
+
+		}
+		@media(max-height: 767px){
+			.cartoes{
+				height: 900px;
+			}
+
+		}
+		@media(max-height: 767px){
+			.img-seg{
+				height: 200px;
+			}
+			.img-com{
+				height: 200px;
+			}
+
+		}
+		
