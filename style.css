@@ -1,4 +1,4 @@
-	*{
+		*{
 			margin: 0;
 			padding: 0;
 		}
@@ -229,7 +229,7 @@
 		}
 		@media(max-height: 767px){
 			.cartoes{
-				height: 900px;
+				height: 1000px;
 			}
 
 		}
@@ -242,4 +242,6 @@
 			}
 
 		}
+		
+
 		
